@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
+<head>
+    <title>Home</title>
+</head>
+<body>
+<div >
+    <p sec:authorize="!isAuthenticated()">
+        <a href="/oauth2/authorization/messages-webapp">Login</a>
+    </p>
+
+    <h1>Welcome <span th:text="${userName}">userName</span></h1>
+
+</div>
+</body>
+</html>

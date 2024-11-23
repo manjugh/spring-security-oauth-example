@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: message-webapp
+
+  security:
+    oauth2:
+      client:
+        registration:
+          messages-webapp:
+            clientId: messages-webapp
+            authorizationGrantType: authorization_code
+            clientSecret: 7k3DtMgpNEePd9ji1ggzxmbZn8FZAWEe
+            scope:
+              - openid
+              - profile
+            redirectUri: '{baseUrl}/login/oauth2/code/messages-webapp'
+        provider:
+          messages-webapp:
+            issuerUri: http://localhost:9191/realms/mghlocal
+
+logging:
+  level:
+    root: DEBUG
